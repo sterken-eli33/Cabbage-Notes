@@ -5,6 +5,13 @@ export default eventHandler(async event => {
     const { user } = await requireUserSession(event);
     const body = await readValidatedBody(event, updateUserSchema.parse);
 
+    if(Object.keys(body).length === 0) {
+        throw createError({
+            statusCode: 400,
+            statusMessage: "We'll need at least one key to set!"
+        });
+    };
+
     await db.update(schema.users).set({
         email: body.email,
         name: body.name,
