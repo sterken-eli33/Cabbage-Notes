@@ -7,6 +7,7 @@ export default defineNuxtConfig({
 		db: 'sqlite'
 	},
 	modules: [
-		'@nuxthub/core'
+		'@nuxthub/core',
+		'nuxt-auth-utils'
 	]
 });
