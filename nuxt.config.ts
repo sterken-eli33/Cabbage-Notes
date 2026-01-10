@@ -6,7 +6,11 @@ export default defineNuxtConfig({
 	hub: {
 		db: 'sqlite'
 	},
+	css: [
+		'~/assets/css/main.css'
+	],
 	modules: [
+		'@nuxt/ui',
 		'@nuxthub/core',
 		'nuxt-auth-utils'
 	]
